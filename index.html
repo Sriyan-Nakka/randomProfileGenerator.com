@@ -8,6 +8,16 @@
     <link rel="shortcut icon" href="favicon.png" type="image/png" />
     <title>Random Profile Generator</title>
     <style>
+      @font-face {
+        font-family: "headFont";
+        src: url("fonts/howdybun-webfont.woff2") format("woff2"),
+          url("fonts/howdybun-webfont.woff") format("woff");
+      }
+      @font-face {
+        font-family: "bodyFont";
+        src: url("fonts/FiraSans-Regular.ttf") format("truetype");
+      }
+
       .icon {
         width: 40px;
         margin: 0.5rem;
@@ -24,6 +34,7 @@
         color: white;
         font-size: 1.6rem;
         text-align: center;
+        font-family: bodyFont, sans-serif;
       }
       footer {
         font-size: 1.25rem;
@@ -36,6 +47,10 @@
       button {
         cursor: pointer;
       }
+      #link {
+        color: skyblue;
+        text-decoration: underline;
+      }
       hr {
         height: 3px;
         border: none;
@@ -47,6 +62,48 @@
       }
       header h1 {
         margin: 5px 0px;
+        text-decoration: underline;
+        text-decoration-color: hsl(209, 75%, 40%);
+        color: hsl(209, 75%, 75%);
+      }
+      header h1,
+      b {
+        font-family: headFont, sans-serif;
+        font-weight: normal;
+      }
+      #profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        display: none;
+      }
+      #profileInner {
+        border: 3px solid whitesmoke;
+        border-radius: 5px;
+        padding: 15px;
+        padding-bottom: 5px;
+        width: 100%;
+        box-shadow: inset 0px 0px 15px 5px hsla(209, 75%, 60%, 0.5);
+        font-size: 1.8rem;
+      }
+      @media (pointer: fine) and (min-width: 1024px) {
+        #profileInner {
+          width: 55% !important;
+        }
+      }
+      #profileImage {
+        border-radius: 60%;
+      }
+      #profileName {
+        margin: 10px 0px 0px;
+      }
+      #imagePara {
+        margin: 10px 0px 0px;
+      }
+      #generateProfile {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -57,7 +114,53 @@
       Generate Random Profiles for your needs!
     </header>
     <hr />
-    <main>Meow</main>
+    <main>
+      <button id="generateProfile">Generate Profile</button>
+      <div id="profile">
+        <div id="profileInner">
+          <p id="imagePara">
+            <img src="" alt="Profile Image" id="profileImage" />
+          </p>
+          <b><p id="profileName">Name</p></b>
+          <p>
+            <b>Age: </b>
+            <span id="profileAge">Age</span>
+          </p>
+          <p>
+            <b>DOB : </b>
+            <span id="profileDOB">Age</span>
+          </p>
+          <p>
+            <b>Nation : </b>
+            <span id="profileNation">Nation</span>
+          </p>
+          <p>
+            <b>Email: </b>
+            <span id="profileEmail">person@gmail.com</span>
+          </p>
+          <p>
+            <b>Username: </b>
+            <span id="profileUsername">username</span>
+          </p>
+          <p>
+            <b>Password: </b>
+            <span id="profilePassword">username</span>
+          </p>
+          <p>
+            <b>Cell No: </b>
+            <span id="profileCellNum">Cell Number</span>
+          </p>
+          <p>
+            <b>Mobile No: </b>
+            <span id="profilePhoneNum">Mobile Number</span>
+          </p>
+          <p>
+            <b>Location: </b>
+            <span id="profileLocation">Location</span>
+          </p>
+        </div>
+      </div>
+    </main>
     <hr id="footerHr" />
     <footer>
       <center>
@@ -87,7 +190,8 @@
         </a>
         <br />
         &copy; Copyright, Sai Sriyan Nakka 2025, All Rights Reserved.
-        <br />Version 0.2 <br />
+        <br />Version 1.0 <br />
+        Made using <a href="https://randomuser.me" id="link">randomuser.me</a>
       </center>
     </footer>
   </body>
